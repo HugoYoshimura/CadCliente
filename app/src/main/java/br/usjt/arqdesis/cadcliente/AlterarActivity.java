@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class AlterarActivity extends AppCompatActivity {
 
@@ -32,18 +33,22 @@ public class AlterarActivity extends AppCompatActivity {
                 editTextNome.setText(cliente.getNome());
                 editTextCpf.setText(cliente.getCpf());
                 editTextIdade.setText(cliente.getIdade()+"");
-                editTextIdade.setText(cliente.getTelefone());
+                editTextTelefone.setText(cliente.getTelefone());
             }
+        } else {
+            Toast.makeText(this, "ID inválido!", Toast.LENGTH_LONG).show();
         }
-        finish();
     }
 
     public void alterarRegistro(View view){
-        editTextNome.setText(cliente.getNome());
-        editTextCpf.setText(cliente.getCpf());
-        editTextIdade.setText(cliente.getIdade()+"");
-        editTextIdade.setText(cliente.getTelefone());
+        cliente.setNome(editTextNome.getText().toString());
+        cliente.setIdade(Integer.parseInt(editTextIdade.getText().toString()));
+        cliente.setCpf(editTextCpf.getText().toString());
+        cliente.setTelefone(editTextTelefone.getText().toString());
         cliente.save();
-        finish();
+        Toast.makeText(this, "Alterado com sucesso!", Toast.LENGTH_LONG).show();
+        consultarRegistro(view);
+
+
     }
 }

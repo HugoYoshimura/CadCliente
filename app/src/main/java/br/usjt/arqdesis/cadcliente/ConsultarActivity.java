@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class ConsultarActivity extends AppCompatActivity {
 
@@ -30,9 +31,10 @@ public class ConsultarActivity extends AppCompatActivity {
                 editTextNome.setText(cliente.getNome());
                 editTextCpf.setText(cliente.getCpf());
                 editTextIdade.setText(cliente.getIdade()+"");
-                editTextIdade.setText(cliente.getTelefone());
+                editTextTelefone.setText(cliente.getTelefone());
+            } else {
+                Toast.makeText(this, "ID inválido!", Toast.LENGTH_LONG).show();
             }
         }
-        finish();
     }
 }

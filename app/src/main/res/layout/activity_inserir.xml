@@ -88,9 +88,8 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btnInserir"
+        android:id="@+id/btnInserirLayout"
         android:text="INSERIR"
-        android:onClick="inserirRegistro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
